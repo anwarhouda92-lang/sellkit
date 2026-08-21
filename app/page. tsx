@@ -146,7 +146,11 @@ export default function Home() {
   href={
     tool.title === "Pricing Calculator"
       ? "/tools/pricing"
+      : tool.title === "ROAS Calculator"
+      ? "/tools/roas"
       : "#"
+  }
+
   }
   className="mt-6 inline-block text-sm font-bold text-white transition group-hover:text-slate-300"
 >
