@@ -1,0 +1,177 @@
+"use client";
+
+import { useState } from "react";
+
+const tools = [
+  {
+    title: "Pricing Calculator",
+    description: "Calculate the right selling price and protect your profit.",
+    icon: "💰",
+  },
+  {
+    title: "ROAS Calculator",
+    description: "Measure the return on your advertising spend.",
+    icon: "📈",
+  },
+  {
+    title: "Profit Calculator",
+    description: "Know your real profit after costs and advertising.",
+    icon: "🧮",
+  },
+  {
+    title: "Product Description",
+    description: "Create persuasive product descriptions in seconds.",
+    icon: "✍️",
+  },
+  {
+    title: "Ad Generator",
+    description: "Generate marketing ideas and ad copy for your products.",
+    icon: "🚀",
+  },
+];
+
+export default function Home() {
+  const [language, setLanguage] = useState("EN");
+
+  return (
+    <main className="min-h-screen bg-slate-950 text-white">
+      {/* Header */}
+      <header className="border-b border-white/10 bg-slate-950/95">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-lg font-black text-slate-950">
+              S
+            </div>
+
+            <div>
+              <h1 className="text-xl font-bold">SellKit</h1>
+              <p className="text-xs text-slate-400">
+                E-commerce Growth Tools
+              </p>
+            </div>
+          </div>
+
+          <nav className="hidden items-center gap-8 md:flex">
+            <a href="#tools" className="text-sm text-slate-300 hover:text-white">
+              Tools
+            </a>
+            <a href="#about" className="text-sm text-slate-300 hover:text-white">
+              About
+            </a>
+          </nav>
+
+          <select
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+            className="rounded-lg border border-white/10 bg-slate-900 px-3 py-2 text-sm text-white outline-none"
+          >
+            <option value="EN">EN</option>
+            <option value="FR">FR</option>
+            <option value="AR">AR</option>
+          </select>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="px-6 py-24">
+        <div className="mx-auto max-w-5xl text-center">
+          <div className="mb-6 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">
+            Simple tools for smarter selling
+          </div>
+
+          <h2 className="text-5xl font-black tracking-tight md:text-7xl">
+            Build better.
+            <br />
+            <span className="text-slate-400">Sell smarter.</span>
+          </h2>
+
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-400">
+            SellKit gives e-commerce sellers the essential tools to price
+            products, calculate profit, analyze advertising and create
+            marketing content.
+          </p>
+
+          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+            <a
+              href="#tools"
+              className="rounded-xl bg-white px-7 py-4 font-bold text-slate-950 transition hover:bg-slate-200"
+            >
+              Explore Tools
+            </a>
+
+            <a
+              href="#about"
+              className="rounded-xl border border-white/10 bg-white/5 px-7 py-4 font-bold text-white transition hover:bg-white/10"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Tools */}
+      <section id="tools" className="px-6 py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-slate-500">
+              SellKit Tools
+            </p>
+
+            <h3 className="text-3xl font-bold md:text-4xl">
+              Everything you need to sell smarter.
+            </h3>
+
+            <p className="mt-4 max-w-2xl text-slate-400">
+              Start with the essential calculations and marketing tools every
+              online seller needs.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {tools.map((tool) => (
+              <div
+                key={tool.title}
+                className="group rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06]"
+              >
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 text-2xl">
+                  {tool.icon}
+                </div>
+
+                <h4 className="text-xl font-bold">{tool.title}</h4>
+
+                <p className="mt-3 min-h-14 leading-7 text-slate-400">
+                  {tool.description}
+                </p>
+
+                <button className="mt-6 text-sm font-bold text-white transition group-hover:text-slate-300">
+                  Open tool →
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="border-y border-white/10 px-6 py-20">
+        <div className="mx-auto max-w-4xl text-center">
+          <h3 className="text-3xl font-bold">One toolkit. Better decisions.</h3>
+
+          <p className="mt-6 leading-8 text-slate-400">
+            SellKit is being built as a practical toolkit for e-commerce
+            sellers. The goal is simple: turn product costs, advertising
+            numbers and marketing ideas into clear business decisions.
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="px-6 py-10">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-sm text-slate-500 md:flex-row">
+          <p>© 2026 SellKit. All rights reserved.</p>
+          <p>Built for modern e-commerce sellers.</p>
+        </div>
+      </footer>
+    </main>
+  );
+}
