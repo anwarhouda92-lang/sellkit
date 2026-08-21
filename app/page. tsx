@@ -142,10 +142,16 @@ export default function Home() {
                 <p className="mt-3 min-h-14 leading-7 text-slate-400">
                   {tool.description}
                 </p>
-
-                <button className="mt-6 text-sm font-bold text-white transition group-hover:text-slate-300">
-                  Open tool →
-                </button>
+<a
+  href={
+    tool.title === "Pricing Calculator"
+      ? "/tools/pricing"
+      : "#"
+  }
+  className="mt-6 inline-block text-sm font-bold text-white transition group-hover:text-slate-300"
+>
+  Open tool →
+</a>
               </div>
             ))}
           </div>
