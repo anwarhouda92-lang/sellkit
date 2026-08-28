@@ -167,7 +167,6 @@ function Input({
     </div>
   );
 }
-
 function ResultCard({
   label,
   value,
@@ -181,4 +180,4 @@ function ResultCard({
       <p className="mt-2 text-lg font-bold">{value}</p>
     </div>
   );
-      }
+}
